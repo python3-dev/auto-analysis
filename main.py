@@ -39,3 +39,6 @@ fig, ax = plt.subplots(figsize = (7,5))
 
 sns.scatterplot(x=selected_option_1, y="Ex-Showroom_Price", size=size_param, sizes = (min_size, max_size), data=df, hue="Fuel_Type", alpha=.5, palette="muted")
 st.pyplot(fig)
+
+link  = "Source: [auto-analysis](https://github.com/pratheeshraniprakash/auto-analysis) - Pratheesh Prakash"
+st.markdown(link, unsafe_allow_html=True)
