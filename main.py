@@ -27,15 +27,13 @@ st.markdown('''
     How is price correlated with performance parameters?
     ===================================================
     ''')
-selected_option_1 = st.selectbox("Select the parameter to compare", option_list_1, index=0, format_func=processSelectedOption, key="list1") #key=None
+selected_option_1 = st.selectbox("Select the parameter to compare", option_list_1, index=0, format_func=processSelectedOption, key="list1")
 
-if selected_option_1 == 'Displacement':
-    size_param = 'max_power'
-else:
-    size_param = 'Displacement'
+param_list = list(set(option_list_1) - set([selected_option_1]))
+size_param = st.selectbox("Select the size-parameter", param_list, index=0, format_func=processSelectedOption, key="list1-2")
 
 min_size = 40
-scale_factor = (df[size_param].max()/df[size_param].min())**(1/1.75)
+scale_factor = (df[size_param].max()/df[size_param].min())**(1/2)
 max_size = min_size*scale_factor
 
 st.write(f"Selected option: {selected_option_1}")
@@ -52,10 +50,8 @@ st.markdown('''
 option_list_2 = ['Displacement', 'max_power', 'max_torque', 'ARAI_Certified_Mileage']
 selected_option_2 = st.selectbox("Select the parameter to compare", option_list_2, index=0, format_func=processSelectedOption, key="list2") #key=None
 
-if selected_option_1 == 'Displacement':
-    size_param = 'max_power'
-else:
-    size_param = 'Displacement'
+param_list = list(set(option_list_2) - set([selected_option_2]))
+size_param = st.selectbox("Select the size-parameter", param_list, index=0, format_func=processSelectedOption, key="list2-2")
 
 min_size = 40
 scale_factor = (df[size_param].max()/df[size_param].min())**(1/1.75)
