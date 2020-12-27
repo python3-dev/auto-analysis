@@ -37,7 +37,7 @@ scale_factor = (df[size_param].max()/df[size_param].min())**(1/2)
 max_size = min_size*scale_factor
 
 st.write(f"Selected option: {selected_option_1}")
-fig, ax = plt.subplots(figsize = (7,5))
+fig, ax = plt.subplots(figsize = (7,7))
 
 sns.scatterplot(x=selected_option_1, y="Ex-Showroom_Price", size=size_param, sizes = (min_size, max_size), data=df, hue="Fuel_Type", alpha=.5, palette="muted")
 st.pyplot(fig)
@@ -54,10 +54,10 @@ param_list = list(set(option_list_2) - set([selected_option_2]))
 size_param = st.selectbox("Select the size-parameter", param_list, index=0, format_func=processSelectedOption, key="list2-2")
 
 min_size = 40
-scale_factor = (df[size_param].max()/df[size_param].min())**(1/1.75)
+scale_factor = (df[size_param].max()/df[size_param].min())**(1/2)
 max_size = min_size*scale_factor
 
-fig, ax = plt.subplots(figsize = (7,5))
+fig, ax = plt.subplots(figsize = (7,7))
 
 sns.scatterplot(x=selected_option_2, y="Fuel_Tank_Capacity", hue="Fuel_Type", size=size_param, sizes = (min_size, max_size), alpha=.5, palette="muted", data=df)
 st.pyplot(fig)
