@@ -14,10 +14,12 @@ def processSelectedOption(input_label):
     return(output_label) 
 
 st.title("Automobiles of India")
-st.header("A price-performance analysis of selected automobiles")
-st.subheader("5 performance parameters of 853 Indian automobiles are compared with their ex-showroom price.")
 
-link  = "Source data: [Indian Cars Dataset, Abhinav Medhekar] (https://www.kaggle.com/medhekarabhinav5/indian-cars-dataset)"
+st.header("A Parametric Analysis of 851 Indian Automobiles")
+st.subheader("How does various automobile parameters correlate with each other?")
+
+
+link  = "Source data: [Indian Cars Dataset] (https://www.kaggle.com/medhekarabhinav5/indian-cars-dataset) - Abhinav Medhekar"
 st.markdown(link, unsafe_allow_html=True)
 
 option_list_1 = ['Displacement', 'max_power', 'max_torque', 'ARAI_Certified_Mileage']
